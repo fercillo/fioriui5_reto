@@ -5,6 +5,10 @@ sap.ui.define([
 
     return Controller.extend("dev.invoices.controller.mainView", {
         onInit() {
+            const oJSONModel = new sap.ui.model.json.JSONModel();
+            const oView = this.getView();
+            oJSONModel.loadData("./model/selectionScreenMenu.json");
+            oView.setModel(oJSONModel, "selectionScreen");
         }
     });
 });

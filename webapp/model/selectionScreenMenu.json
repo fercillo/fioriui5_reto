@@ -1,7 +1,11 @@
 {
     " ShipName": "",
     "CountryKey": "",
-    "Countries ": [
+    "Countries": [
+        {
+            "key": "",
+            "text": ""
+        },
         {
             "key": "Germany",
             "text": "Germany"

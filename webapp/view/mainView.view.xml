@@ -5,18 +5,50 @@
     
     <Page id="page" title="{i18n>title}">
     <content>
-    <Panel headerText="{i18n>selectScreen}" id="pnl1"></Panel>
+    <Panel headerText="{i18n>selectScreen}" id="pnl1">
     <Label id="labelShiname" labelFor="shipName" text="{i18n>shipName}" class="sapUiSmallMargin" ></Label>
-    <Input id="shipName" width="200px" class="sapUiSmallMarginEnd"></Input>
+    <Input id="shipName" value="{selectionScreen>/ShipName}" width="200px" class="sapUiSmallMarginEnd"></Input>
     <Label id="labelCountry" text="{i18n>country}" class="sapUiSmallMargin"></Label>
     <Select id="selectCountry"  selectedKey="{selectionScreen>/CountryKey}" 
                                 forceSelection="false" 
                                 items="{selectionScreen>/Countries}">
         <items>
-          <core:Item id="_IDGenItem"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+          <core:Item id="_ItemCoun"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
         </items>
-    
     </Select>
+    <Button id="btnFilter"
+            text="{i18n>btnFilter}" 
+            icon="sap-icon://filter" 
+            press="onFilter"
+            class="sapUiSmallMarginEnd" />
+      <Button id="btnClearFilter"
+            text="{i18n>btnClearFilter}" 
+            icon="sap-icon://clear-filter" 
+            press="onClearFilter"
+            class="sapUiSmallMarginEnd" />
+    </Panel>
+    <Panel id="pnl2" >
+    <List id="invoicesList" 
+          headerText="{i18n>invoicesHeader}" 
+          class="sapUiResponsiveMargin" 
+          width="auto" 
+          items="{/Invoices}">
+        <items >
+          <ObjectListItem id="_ItemInvo"
+                          title="{ShipName} - {Country}"
+                          number="{parts : [ {path: 'ExtendedPrice'},
+                                             {path: 'selectionScreen>/Currency'}],
+                                   type: 'sap.ui.model.type.Currency',
+                                   formatOptions: {
+                                                   showMeasure : false
+                                                  }
+                                  }"
+                          numberUnit="{selectionScreen>/Currency}"
+                          numberState="{= ${ExtendedPrice} > 100 ? 'Success' : 'Warring'}">
+          </ObjectListItem>
+        </items>
+    </List>
+    </Panel>
     </content>
     </Page>
 </mvc:View>

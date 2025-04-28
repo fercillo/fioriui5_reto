@@ -1,0 +1,40 @@
+{
+    "user": [
+      {
+        "id": "1",
+        "typedoc": "P",
+        "name": "fernando",
+        "lastname": "sastré",
+        "birthdate": "1992-06-13",
+        "placebirth": "CDMX",
+        "nationality": "national",
+        "genre":"male",
+        "civilStatus": "single",
+        "country": "Mexico",
+        "province": "CDMX",
+        "region":"Norte",
+        "address": "miguel hidalgo",
+        "postalcode": "11320",
+        "phoneNumber":"+1 (610) 661-1000",
+        "email": "ef.onedrive@gmail.com"
+      },
+      {
+        "id": "2",
+        "typedoc": "P",
+        "name": "mili",
+        "lastname": "magaña",
+        "birthdate": "1992-06-13",
+        "placebirth": "CDMX",
+        "nationality": "national",
+        "genre":"male",
+        "civilStatus": "single",
+        "country": "Mexico",
+        "province": "CDMX",
+        "region":"Norte",
+        "address": "miguel hidalgo",
+        "postalcode": "11320",
+        "phoneNumber":"+1 (610) 661-1000",
+        "email": "ef.onedrive@gmail.com"
+      }
+    ]
+  }

@@ -1,0 +1,242 @@
+<mvc:View xmlns:cal="sap.gantt.def.cal"
+    controllerName="retoui5.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page
+        id="page"
+        title="{i18n>title}">
+            <content>
+            <VBox id="formContainerUser" class="sapUiResponsiveMargin"  >
+             <f:SimpleForm id="sformPersonal"
+                           editable="true"
+                           layout="ColumnLayout"
+                           title="Data"
+                           columnsL="2"
+                           columnsM="2"
+                           columnsXL="2">
+                           <f:content>
+                           <core:Title id="TitlePersonal"  text="Personal Information"/>
+                           <Label id="labelid" text="ID" required="true" />
+                           <Input id="id"  value="{ path : 'modeluser>/id', type : 'sap.ui.model.type.String'}" class="sapUiSmallMarginEnd" required="true"/>
+                           <Label id="labeltypedoc" text="Type Doc" required="true" />
+                           <Select id="typedoc" selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Typedoc}">
+                                 <items>
+                                  <core:Item id="itemtypedoc"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labelname" text="First Name" required="true" />
+                           <Input id="name" value="{ path : 'modeluser>/name'}" class="sapUiSmallMarginEnd" required="true"/>
+                           <Label id="labellastname" text="Last Name" required="true" />
+                           <Input id="lastname" value="{ path : 'modeluser>/lastname'}" class="sapUiSmallMarginEnd" required="true"/>
+                           <Label id="labelbirthdate" text="Birth Date" required="true" />
+                           <DatePicker id="birthdate" value="{ path : 'modeluser>/birthdate'}" class="sapUiSmallMarginEnd" required="true" />
+
+                           <core:Title id="TitleOther"  text="Other Information"/>
+                           <Label id="labelplacebirth" text="Place Birth" required="true" />
+                           <Select id="placebirth"  selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Placesbirth}">
+                                 <items>
+                                  <core:Item id="itemplacebirth"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labelnationality" text="Nationality" required="true" />
+                           <Select id="nationality" selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Nationality}">
+                                 <items>
+                                  <core:Item id="itemnationality"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labelgenre" text="Genre" required="true" />
+                           <Select id="genre" selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Genre}">
+                                 <items>
+                                  <core:Item id="itemgenre"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labelcivilStatus" text="Civil Status" required="true" />
+                           <Select id="civilStatus" selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/CivilStatus}">
+                                 <items>
+                                  <core:Item id="itemcivilStatus"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+
+                           <core:Title id="TitleAddress"  text="Address Information"/>
+                           <Label id="labelcountry" text="Country" required="true" />
+                           <Select id="country"   selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Countries}">
+                                 <items>
+                                  <core:Item id="itemcountry"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labelprovince" text="Province" required="true" />
+                           <Select id="province"   selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Provinces}">
+                                 <items>
+                                  <core:Item id="itemprovince"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labelregion" text="Region" required="true" />
+                           <Select id="region" selectedKey="{selectionScreen>/EmptyKey}" 
+                                forceSelection="false" 
+                                items="{selectionScreen>/Regiones}">
+                                 <items>
+                                  <core:Item id="itemregion"  key="{selectionScreen>key}" text="{selectionScreen>text}"></core:Item>
+                                 </items>
+                            </Select>
+                           <Label id="labeladdres" text="Address" required="true" />
+                           <Input id="address" value="{ path : 'modeluser>/address'}" class="sapUiSmallMarginEnd" required="true" />
+                           <Label id="labelpostalCode" text="Postal Code" required="true" />
+                           <Input id="postalcode" value="{ path : 'modeluser>/postalcode'}" class="sapUiSmallMarginEnd" required="true">
+                           <layoutData>
+                           <f:ColumnElementData id="col-cp" cellsSmall="4" cellsLarge="3" >
+                           </f:ColumnElementData>
+                           </layoutData>
+                           </Input>
+
+                           <core:Title id="TitleContact"  text="Contact Information"/>
+                           <Label id="labelphoneNumber" text="Phone Number" required="true" />
+                           <Input id="phoneNumber" value="{ path : 'modeluser>/phoneNumber'}"  class="sapUiSmallMarginEnd" required="true"/>
+                           <Label id="labelemail" text="Email" required="true" />
+                           <Input id="email" value="{ path : 'modeluser>/email',
+                                                       type : 'sap.ui.model.type.String',
+                                                       constraints : {
+                                                            search : '^\\w+[\\-+\\.]*\\@[a-zA-Z]+.[a-zA-Z]+'
+                                                                      } 
+                                                       }" 
+                                             class="sapUiSmallMarginEnd" required="true"/>
+                                             
+                           </f:content>
+             </f:SimpleForm>
+
+            </VBox>
+            <VBox id="formContainerList" class="sapUiResponsiveMargin">
+              <Table id="tble" class="sapUiResponsiveMargin"
+                     headerText="{i18n>listHeader} "
+                     width="auto" 
+                     items="{modeluser>/user}">          
+                     <columns >
+                         <Column id="column1">
+                          <Text id="coltx1" text="Number Document"></Text>
+                         </Column>
+                         <Column id="column2">
+                          <Text id="coltx2" text="Full name"></Text>
+                         </Column>
+                         <Column id="column3">
+                          <Text id="coltx3" text="Birth Date"></Text>
+                         </Column>
+                         <Column id="column4">
+                          <Text id="coltx4" text="Place Birth"></Text>
+                         </Column>
+                         <Column id="column5">
+                          <Text id="coltx5" text="Nationality"></Text>
+                         </Column>
+                         <Column id="column6">
+                          <Text id="coltx6" text="Genre"></Text>
+                         </Column>
+                         <Column id="column7">
+                          <Text id="coltx7" text="Civil Status"></Text>
+                         </Column>
+                         <Column id="column8">
+                          <Text id="coltx8" text="Country"></Text>
+                         </Column>
+                         <Column id="column9">
+                          <Text id="coltx9" text="province"></Text>
+                         </Column>
+                         <Column id="column10">
+                          <Text id="coltx10" text="Region"></Text>
+                         </Column>
+                         <Column id="column11">
+                          <Text id="coltx11" text="Adrress"></Text>
+                         </Column>
+                         <Column id="column12">
+                          <Text id="coltx12" text="Postal Code"></Text>
+                         </Column>
+                         <Column id="column13">
+                          <Text id="coltx13" text="Phone"></Text>
+                         </Column>
+                         <Column id="column14">
+                          <Text id="coltx14" text="Email"></Text>
+                         </Column>
+                     </columns>
+                     <items> 
+                     <ColumnListItem id="cl_listitem">
+                         <cells >
+                         <Text id="celtx1" text="{modeluser>id}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx2" text="{modeluser>name}  {modeluser>lastname} " />
+                         </cells>
+                         <cells >
+                         <Text id="celtx3" text="{modeluser>birthdate}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx4" text="{modeluser>placebirth}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx5" text="{modeluser>nationality}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx6" text="{modeluser>genre}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx7" text="{modeluser>civilStatus}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx8" text="{modeluser>country}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx9" text="{modeluser>province}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx10" text="{modeluser>region}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx11" text="{modeluser>address}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx12" text="{modeluser>postalcode}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx13" text="{modeluser>phoneNumber}" />
+                         </cells>
+                         <cells >
+                         <Text id="celtx14" text="{modeluser>email}" />
+                         </cells>
+                         
+                      </ColumnListItem>
+                     </items>
+              </Table>
+            </VBox>
+            
+            
+            </content>
+            <footer>
+            <OverflowToolbar id="oflow" >
+            <Button id="messagePopover"
+                     visible="false"
+                     icon="{ path: '/', formatter: '.mpIconFormatter'}"
+                     type="{ path: '/', formatter: '.mpTypeFormatter'}"
+                     text="{ path: '/', formatter: '.mpSeverityMessages'}"
+                     press="handleMessagesPopover"/>
+            <ToolbarSpacer id="toolbarend"/>
+            
+            <Button id="save" text="Save" press="SaveData" type="Emphasized"/>
+            <Button id="clear" text="Clear"  press="limpiarInputs" type="Attention"/>
+            
+            </OverflowToolbar>
+            </footer>
+            
+
+    </Page>
+</mvc:View>

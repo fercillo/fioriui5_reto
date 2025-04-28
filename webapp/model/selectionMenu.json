@@ -1,0 +1,121 @@
+{
+    "EmptyKey": "",
+    "Countries": [
+        {
+            "key": "Germany",
+            "text": "Germany"
+        },
+        {
+            "key": "UK",
+            "text": "UK"
+        },
+        {
+            "key": "Mexico",
+            "text": "Mexico"
+        },
+        {
+            "key": "Sweden",
+            "text": "Sweden "
+        },
+        {
+            "key": "Brazil",
+            "text": "Brazil"
+        }
+    ],
+    "Provinces": [
+        {
+            "key": "CDMX1",
+            "text": "Ciudad de México"
+        },
+        {
+            "key": "Berlin1",
+            "text": "Berlin"
+        },
+        {
+            "key": "London1",
+            "text": "London"
+        },
+        {
+            "key": "Stockholm1",
+            "text": "Stockholm"
+        },
+        {
+            "key": "Brasilia1",
+            "text": "Brasilia"
+        }
+    ],
+    "Regiones": [
+        {
+            "key": "Norte",
+            "text": "Norte"
+        },
+        {
+            "key": "Sur",
+            "text": "Sur"
+        }
+    ],
+    "Placesbirth": [
+        {
+            "key": "CDMX",
+            "text": "Ciudad de México"
+        },
+        {
+            "key": "Berlin",
+            "text": "Berlin"
+        },
+        {
+            "key": "London",
+            "text": "London"
+        },
+        {
+            "key": "Stockholm",
+            "text": "Stockholm"
+        },
+        {
+            "key": "Brasilia",
+            "text": "Brasilia"
+        }
+    ],
+    "Nationality": [
+        {
+            "key": "foreign",
+            "text": "Foreign"
+        },
+        {
+            "key": "national",
+            "text": "national"
+        }
+    ],
+    "Genre": [
+        {
+            "key": "male",
+            "text": "male"
+        },
+        {
+            "key": "female",
+            "text": "female"
+        }
+    ],
+    "CivilStatus": [
+        {
+            "key": "single",
+            "text": "single"
+        },
+        {
+            "key": "married",
+            "text": "married"
+        }
+    ],
+    "Typedoc": [
+        {
+            "key": "P",
+            "text": "P"
+        },
+        {
+            "key": "A",
+            "text": "A"
+        }
+    ]
+
+
+}
